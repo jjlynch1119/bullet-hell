@@ -1,4 +1,4 @@
-#include "Game.hpp"
+#include "Game.h"
 
 Game* game = nullptr;
 
@@ -11,7 +11,7 @@ int main(int argc, char* args[])
 	int frameTime;
 
 	game = new Game();
-	game->init("Engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280, 960, false);
+	game->init("Engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 640, false);
 
 	while (game->running())
 	{

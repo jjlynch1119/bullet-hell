@@ -1,18 +1,17 @@
-#include "Game.hpp"
+#include "Game.h"
+#include "TextureManager.h"
+#include "GameObject.h"
 
-int cnt;
-SDL_Texture* playerTex;
-SDL_Rect srcR, destR;
+GameObject* player;
+GameObject* enemy;
+
+SDL_Renderer* Game::renderer = nullptr;
 
 Game::Game()
-{
-    
-}
+{}
 
 Game::~Game()
-{
-
-}
+{}
 
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
@@ -47,9 +46,8 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         isRunning = false;
     }
 
-    SDL_Surface* tmpSurface = IMG_Load("assets/Ships/ship_0010.png");
-    playerTex = SDL_CreateTextureFromSurface(renderer, tmpSurface);
-    SDL_FreeSurface(tmpSurface);
+    player = new GameObject("assets/Ships/ship_0010.png", renderer, 0, 0);
+    enemy = new GameObject("assets/Ships/ship_0009.png", renderer, 10, 10);
 }
 
 void Game::handleEvents()
@@ -70,13 +68,8 @@ void Game::handleEvents()
 
 void Game::update()
 {
-    cnt++;
-
-    destR.h = 64;
-    destR.w = 64;
-    destR.x = cnt;
-
-    std::cout << cnt << "\n";
+    player->Update();
+    enemy->Update();
 }
 
 void Game::render()
@@ -84,7 +77,8 @@ void Game::render()
     SDL_RenderClear(renderer);
 
     //this is where we would add stuff to render
-    SDL_RenderCopy(renderer, playerTex, nullptr, &destR);
+    player->Render();
+    enemy->Render();
 
     SDL_RenderPresent(renderer);
 }
