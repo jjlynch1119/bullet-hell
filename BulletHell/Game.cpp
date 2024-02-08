@@ -1,5 +1,9 @@
 #include "Game.hpp"
 
+int cnt;
+SDL_Texture* playerTex;
+SDL_Rect srcR, destR;
+
 Game::Game()
 {
     
@@ -13,11 +17,11 @@ Game::~Game()
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
     int flags = 0;
+
     if (fullscreen)
     {
         flags = SDL_WINDOW_FULLSCREEN;
     }
-
 
     if (SDL_Init(SDL_INIT_EVERYTHING) == 0)
     {
@@ -42,6 +46,10 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     {
         isRunning = false;
     }
+
+    SDL_Surface* tmpSurface = IMG_Load("assets/Ships/ship_0010.png");
+    playerTex = SDL_CreateTextureFromSurface(renderer, tmpSurface);
+    SDL_FreeSurface(tmpSurface);
 }
 
 void Game::handleEvents()
@@ -62,13 +70,22 @@ void Game::handleEvents()
 
 void Game::update()
 {
+    cnt++;
 
+    destR.h = 64;
+    destR.w = 64;
+    destR.x = cnt;
+
+    std::cout << cnt << "\n";
 }
 
 void Game::render()
 {
     SDL_RenderClear(renderer);
+
     //this is where we would add stuff to render
+    SDL_RenderCopy(renderer, playerTex, nullptr, &destR);
+
     SDL_RenderPresent(renderer);
 }
 

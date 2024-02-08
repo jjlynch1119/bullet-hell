@@ -71,8 +71,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\jlync\OneDrive\Desktop\Game Dev\Libraries\SDL2\SDL2-2.28.5\include;C:\Users\jlync\OneDrive\Desktop\Game Dev\Libraries\SDL2_image-2.8.2\include;C:\Users\jlync\OneDrive\Desktop\Game Dev\Libraries\SDL2_mixer-2.6.3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\jlync\OneDrive\Desktop\Game Dev\Libraries\SDL2\SDL2-2.28.5\lib\x64;C:\Users\jlync\OneDrive\Desktop\Game Dev\Libraries\SDL2_image-2.8.2\lib\x64;C:\Users\jlync\OneDrive\Desktop\Game Dev\Libraries\SDL2_mixer-2.6.3\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>F:\GameDev\SDL2\SDL2_ttf-2.22.0\include;F:\GameDev\SDL2\SDL2_mixer-2.8.0\include;F:\GameDev\SDL2\SDL2_image-2.8.2\include;F:\GameDev\SDL2\SDL2-vc\SDL2-2.28.5\include;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\GameDev\SDL2\SDL2-vc\SDL2-2.28.5\lib\x64;F:\GameDev\SDL2\SDL2_image-2.8.2\lib\x64;F:\GameDev\SDL2\SDL2_mixer-2.8.0\lib\x64;F:\GameDev\SDL2\SDL2_ttf-2.22.0\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>F:\GameDev\SDL2\SDL2_ttf-2.22.0\include;F:\GameDev\SDL2\SDL2_mixer-2.8.0\include;F:\GameDev\SDL2\SDL2_image-2.8.2\include;F:\GameDev\SDL2\SDL2-vc\SDL2-2.28.5\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>F:\GameDev\SDL2\SDL2-vc\SDL2-2.28.5\lib\x86;F:\GameDev\SDL2\SDL2_ttf-2.22.0\lib\x86;F:\GameDev\SDL2\SDL2_mixer-2.8.0\lib\x86;F:\GameDev\SDL2\SDL2_image-2.8.2\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -84,6 +88,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2_mixer.lib;SDL2_ttf.lib;SDL2_image.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -112,7 +117,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2_mixer.lib;SDL2_ttf.lib;SDL2_image.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -137,6 +142,156 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\Ships\ship_0000.png" />
+    <Image Include="assets\Ships\ship_0001.png" />
+    <Image Include="assets\Ships\ship_0002.png" />
+    <Image Include="assets\Ships\ship_0003.png" />
+    <Image Include="assets\Ships\ship_0004.png" />
+    <Image Include="assets\Ships\ship_0005.png" />
+    <Image Include="assets\Ships\ship_0006.png" />
+    <Image Include="assets\Ships\ship_0007.png" />
+    <Image Include="assets\Ships\ship_0008.png" />
+    <Image Include="assets\Ships\ship_0009.png" />
+    <Image Include="assets\Ships\ship_0010.png" />
+    <Image Include="assets\Ships\ship_0011.png" />
+    <Image Include="assets\Ships\ship_0012.png" />
+    <Image Include="assets\Ships\ship_0013.png" />
+    <Image Include="assets\Ships\ship_0014.png" />
+    <Image Include="assets\Ships\ship_0015.png" />
+    <Image Include="assets\Ships\ship_0016.png" />
+    <Image Include="assets\Ships\ship_0017.png" />
+    <Image Include="assets\Ships\ship_0018.png" />
+    <Image Include="assets\Ships\ship_0019.png" />
+    <Image Include="assets\Ships\ship_0020.png" />
+    <Image Include="assets\Ships\ship_0021.png" />
+    <Image Include="assets\Ships\ship_0022.png" />
+    <Image Include="assets\Ships\ship_0023.png" />
+    <Image Include="assets\Tilemap\ships.png" />
+    <Image Include="assets\Tilemap\ships_packed.png" />
+    <Image Include="assets\Tilemap\tiles.png" />
+    <Image Include="assets\Tilemap\tiles_packed.png" />
+    <Image Include="assets\Tiles\tile_0000.png" />
+    <Image Include="assets\Tiles\tile_0001.png" />
+    <Image Include="assets\Tiles\tile_0002.png" />
+    <Image Include="assets\Tiles\tile_0003.png" />
+    <Image Include="assets\Tiles\tile_0004.png" />
+    <Image Include="assets\Tiles\tile_0005.png" />
+    <Image Include="assets\Tiles\tile_0006.png" />
+    <Image Include="assets\Tiles\tile_0007.png" />
+    <Image Include="assets\Tiles\tile_0008.png" />
+    <Image Include="assets\Tiles\tile_0009.png" />
+    <Image Include="assets\Tiles\tile_0010.png" />
+    <Image Include="assets\Tiles\tile_0011.png" />
+    <Image Include="assets\Tiles\tile_0012.png" />
+    <Image Include="assets\Tiles\tile_0013.png" />
+    <Image Include="assets\Tiles\tile_0014.png" />
+    <Image Include="assets\Tiles\tile_0015.png" />
+    <Image Include="assets\Tiles\tile_0016.png" />
+    <Image Include="assets\Tiles\tile_0017.png" />
+    <Image Include="assets\Tiles\tile_0018.png" />
+    <Image Include="assets\Tiles\tile_0019.png" />
+    <Image Include="assets\Tiles\tile_0020.png" />
+    <Image Include="assets\Tiles\tile_0021.png" />
+    <Image Include="assets\Tiles\tile_0022.png" />
+    <Image Include="assets\Tiles\tile_0023.png" />
+    <Image Include="assets\Tiles\tile_0024.png" />
+    <Image Include="assets\Tiles\tile_0025.png" />
+    <Image Include="assets\Tiles\tile_0026.png" />
+    <Image Include="assets\Tiles\tile_0027.png" />
+    <Image Include="assets\Tiles\tile_0028.png" />
+    <Image Include="assets\Tiles\tile_0029.png" />
+    <Image Include="assets\Tiles\tile_0030.png" />
+    <Image Include="assets\Tiles\tile_0031.png" />
+    <Image Include="assets\Tiles\tile_0032.png" />
+    <Image Include="assets\Tiles\tile_0033.png" />
+    <Image Include="assets\Tiles\tile_0034.png" />
+    <Image Include="assets\Tiles\tile_0035.png" />
+    <Image Include="assets\Tiles\tile_0036.png" />
+    <Image Include="assets\Tiles\tile_0037.png" />
+    <Image Include="assets\Tiles\tile_0038.png" />
+    <Image Include="assets\Tiles\tile_0039.png" />
+    <Image Include="assets\Tiles\tile_0040.png" />
+    <Image Include="assets\Tiles\tile_0041.png" />
+    <Image Include="assets\Tiles\tile_0042.png" />
+    <Image Include="assets\Tiles\tile_0043.png" />
+    <Image Include="assets\Tiles\tile_0044.png" />
+    <Image Include="assets\Tiles\tile_0045.png" />
+    <Image Include="assets\Tiles\tile_0046.png" />
+    <Image Include="assets\Tiles\tile_0047.png" />
+    <Image Include="assets\Tiles\tile_0048.png" />
+    <Image Include="assets\Tiles\tile_0049.png" />
+    <Image Include="assets\Tiles\tile_0050.png" />
+    <Image Include="assets\Tiles\tile_0051.png" />
+    <Image Include="assets\Tiles\tile_0052.png" />
+    <Image Include="assets\Tiles\tile_0053.png" />
+    <Image Include="assets\Tiles\tile_0054.png" />
+    <Image Include="assets\Tiles\tile_0055.png" />
+    <Image Include="assets\Tiles\tile_0056.png" />
+    <Image Include="assets\Tiles\tile_0057.png" />
+    <Image Include="assets\Tiles\tile_0058.png" />
+    <Image Include="assets\Tiles\tile_0059.png" />
+    <Image Include="assets\Tiles\tile_0060.png" />
+    <Image Include="assets\Tiles\tile_0061.png" />
+    <Image Include="assets\Tiles\tile_0062.png" />
+    <Image Include="assets\Tiles\tile_0063.png" />
+    <Image Include="assets\Tiles\tile_0064.png" />
+    <Image Include="assets\Tiles\tile_0065.png" />
+    <Image Include="assets\Tiles\tile_0066.png" />
+    <Image Include="assets\Tiles\tile_0067.png" />
+    <Image Include="assets\Tiles\tile_0068.png" />
+    <Image Include="assets\Tiles\tile_0069.png" />
+    <Image Include="assets\Tiles\tile_0070.png" />
+    <Image Include="assets\Tiles\tile_0071.png" />
+    <Image Include="assets\Tiles\tile_0072.png" />
+    <Image Include="assets\Tiles\tile_0073.png" />
+    <Image Include="assets\Tiles\tile_0074.png" />
+    <Image Include="assets\Tiles\tile_0075.png" />
+    <Image Include="assets\Tiles\tile_0076.png" />
+    <Image Include="assets\Tiles\tile_0077.png" />
+    <Image Include="assets\Tiles\tile_0078.png" />
+    <Image Include="assets\Tiles\tile_0079.png" />
+    <Image Include="assets\Tiles\tile_0080.png" />
+    <Image Include="assets\Tiles\tile_0081.png" />
+    <Image Include="assets\Tiles\tile_0082.png" />
+    <Image Include="assets\Tiles\tile_0083.png" />
+    <Image Include="assets\Tiles\tile_0084.png" />
+    <Image Include="assets\Tiles\tile_0085.png" />
+    <Image Include="assets\Tiles\tile_0086.png" />
+    <Image Include="assets\Tiles\tile_0087.png" />
+    <Image Include="assets\Tiles\tile_0088.png" />
+    <Image Include="assets\Tiles\tile_0089.png" />
+    <Image Include="assets\Tiles\tile_0090.png" />
+    <Image Include="assets\Tiles\tile_0091.png" />
+    <Image Include="assets\Tiles\tile_0092.png" />
+    <Image Include="assets\Tiles\tile_0093.png" />
+    <Image Include="assets\Tiles\tile_0094.png" />
+    <Image Include="assets\Tiles\tile_0095.png" />
+    <Image Include="assets\Tiles\tile_0096.png" />
+    <Image Include="assets\Tiles\tile_0097.png" />
+    <Image Include="assets\Tiles\tile_0098.png" />
+    <Image Include="assets\Tiles\tile_0099.png" />
+    <Image Include="assets\Tiles\tile_0100.png" />
+    <Image Include="assets\Tiles\tile_0101.png" />
+    <Image Include="assets\Tiles\tile_0102.png" />
+    <Image Include="assets\Tiles\tile_0103.png" />
+    <Image Include="assets\Tiles\tile_0104.png" />
+    <Image Include="assets\Tiles\tile_0105.png" />
+    <Image Include="assets\Tiles\tile_0106.png" />
+    <Image Include="assets\Tiles\tile_0107.png" />
+    <Image Include="assets\Tiles\tile_0108.png" />
+    <Image Include="assets\Tiles\tile_0109.png" />
+    <Image Include="assets\Tiles\tile_0110.png" />
+    <Image Include="assets\Tiles\tile_0111.png" />
+    <Image Include="assets\Tiles\tile_0112.png" />
+    <Image Include="assets\Tiles\tile_0113.png" />
+    <Image Include="assets\Tiles\tile_0114.png" />
+    <Image Include="assets\Tiles\tile_0115.png" />
+    <Image Include="assets\Tiles\tile_0116.png" />
+    <Image Include="assets\Tiles\tile_0117.png" />
+    <Image Include="assets\Tiles\tile_0118.png" />
+    <Image Include="assets\Tiles\tile_0119.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
