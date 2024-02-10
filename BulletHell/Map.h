@@ -8,8 +8,8 @@ public:
 	Map();
 	~Map();
 
-	void LoadMap();
-	void DrawMap();
+	void loadMap(int arr[20][25]);
+	void drawMap();
 
 private:
 	SDL_Rect src, dest;

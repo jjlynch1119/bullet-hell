@@ -1,11 +1,19 @@
 #include "Game.h"
 #include "TextureManager.h"
 #include "GameObject.h"
+#include "Map.h"
+
+#include "ECS.h"
+#include "Components.h"
 
 GameObject* player;
 GameObject* enemy;
+Map* map;
 
 SDL_Renderer* Game::renderer = nullptr;
+
+Manager manager;
+auto& newPlayer(manager.addEntity());
 
 Game::Game()
 {}
@@ -46,8 +54,13 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         isRunning = false;
     }
 
-    player = new GameObject("assets/Ships/ship_0010.png", renderer, 0, 0);
-    enemy = new GameObject("assets/Ships/ship_0009.png", renderer, 10, 10);
+    player = new GameObject("assets/Ships/ship_0010.png", 0, 0);
+    enemy = new GameObject("assets/Ships/ship_0009.png", 10, 10);
+    map = new Map();
+
+    newPlayer.addComponent<PositionComponent>();
+    newPlayer.getComponent<PositionComponent>().setPos(500, 500);
+    
 }
 
 void Game::handleEvents()
@@ -68,8 +81,11 @@ void Game::handleEvents()
 
 void Game::update()
 {
-    player->Update();
-    enemy->Update();
+    player->update();
+    enemy->update();
+    manager.update();
+    std::cout << newPlayer.getComponent<PositionComponent>().x() << ", ";
+    std::cout << newPlayer.getComponent<PositionComponent>().y() << "\n";
 }
 
 void Game::render()
@@ -77,8 +93,9 @@ void Game::render()
     SDL_RenderClear(renderer);
 
     //this is where we would add stuff to render
-    player->Render();
-    enemy->Render();
+    map->drawMap();
+    player->render();
+    enemy->render();
 
     SDL_RenderPresent(renderer);
 }

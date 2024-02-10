@@ -3,7 +3,7 @@
 
 GameObject::GameObject(const char* textureSheet, int x, int y)
 {
-	objTexture = TextureManager::LoadTexture(textureSheet);
+	objTexture = TextureManager::loadTexture(textureSheet);
 
 	//initial position
 	xpos = x;
@@ -15,7 +15,7 @@ GameObject::~GameObject()
 
 }
 
-void GameObject::Update()
+void GameObject::update()
 {
 	xpos++;
 	ypos++;
@@ -31,7 +31,7 @@ void GameObject::Update()
 	destRect.h = srcRect.h * 2;
 }
 
-void GameObject::Render()
+void GameObject::render()
 {
 	SDL_RenderCopy(Game::renderer, objTexture, &srcRect, &destRect);
 }
